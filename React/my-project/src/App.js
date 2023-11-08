@@ -85,7 +85,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
 
-      <ArrayTime
+      <ArrayTime //array function called that lists indexes.
         element = {siteMapData2}
       />
 
