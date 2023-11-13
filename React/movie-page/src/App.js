@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react'; //useState function imported to be used
 
 
 
@@ -48,11 +49,21 @@ function MovieDisplay({posterInfo}){
 
 function App() {
 
+  const [count, setCount] = useState(0); //initlaising useState function to be used
   console.log(movies) //checking that the object is running in the app
+
+  function AddOne(){
+    setCount(count + 1) //setting the increment
+  }
+
   return (
     <div className="App">
       <header className="App-header">
+        
         <h1>Just movies I have seen</h1>
+        <button
+          onClick = {AddOne} //trigger increment through a mouse click
+        >{count}</button> 
         {/* <MovieDisplay //displaying the info of objects using the function
           posterInfo = {movies.first}
         />
@@ -65,7 +76,21 @@ function App() {
           posterInfo = {movies.third}
         /> */}
 
+        {Object.values(movies).map(movie =>{
+              //used map function to view all the objects as an array
+              return(
+                <>
+                  <h2 >Title: {movie.info.title}</h2>
+                  <div class = "info">
+                  <p>Director: {movie.info.director}</p>
+                  <p> Starring: {movie.info.actor}</p>
+                  <img src = {movie.poster} className = "imgStyle"></img>
+                  </div>
+                </>
+              );
+          })
         
+        }
 
 
       </header>

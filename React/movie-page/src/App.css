@@ -14,6 +14,7 @@
 }
 
 .App-header {
+  margin: 10px;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -35,4 +36,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.imgStyle{ /*using this to format the movie posters*/
+  border: 10px solid grey;
+  box-shadow: 5px 15px 20px 19px black;
+  height: 50vh;
+  margin: 100px;
+ 
+}
+
+
+.info{
+  margin:10px;
+  color:blanchedalmond;
+  display: flex;
+  flex-direction: column;
+  
+  
 }
